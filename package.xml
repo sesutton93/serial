@@ -19,8 +19,10 @@
   <author email="wjwwood@gmail.com">William Woodall</author>
   <author email="ash.gti@gmail.com">John Harrison</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
-
+  <export>
+  	<build_type>ament_cmake</build_type>
+  </export>
   <test_depend>boost</test_depend>
+  <test_depend>ament_cmake_gtest</test_depend>
 
 </package>

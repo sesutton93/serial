@@ -2,7 +2,8 @@
 #include <string>
 #include <vector>
 
-#include <boost/bind.hpp>
+#define BOOST_BIND_NO_PLACEHOLDERS
+#include <boost/bind/bind.hpp>
 #include <boost/function.hpp>
 #include <boost/algorithm/string.hpp>
 #include <boost/foreach.hpp>
