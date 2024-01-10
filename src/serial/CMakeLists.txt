@@ -12,22 +12,22 @@ endif()
 
 ## Sources
 set(serial_SRCS
-    src/serial.cc
-    include/serial/serial.h
-    include/serial/v8stdint.h
+    src/serial.cpp
+    include/serial/serial.hpp
+    include/serial/v8stdint.hpp
 )
 if(APPLE)
     # If OSX
-    list(APPEND serial_SRCS src/impl/unix.cc)
-    list(APPEND serial_SRCS src/impl/list_ports/list_ports_osx.cc)
+    list(APPEND serial_SRCS src/impl/unix.cpp)
+    list(APPEND serial_SRCS src/impl/list_ports/list_ports_osx.cpp)
 elseif(UNIX)
     # If unix
-    list(APPEND serial_SRCS src/impl/unix.cc)
-    list(APPEND serial_SRCS src/impl/list_ports/list_ports_linux.cc)
+    list(APPEND serial_SRCS src/impl/unix.cpp)
+    list(APPEND serial_SRCS src/impl/list_ports/list_ports_linux.cpp)
 else()
     # If windows
-    list(APPEND serial_SRCS src/impl/win.cc)
-    list(APPEND serial_SRCS src/impl/list_ports/list_ports_win.cc)
+    list(APPEND serial_SRCS src/impl/win.cpp)
+    list(APPEND serial_SRCS src/impl/list_ports/list_ports_win.cpp)
 endif()
 
 ## Add serial library
@@ -41,7 +41,7 @@ else()
 endif()
 
 ## Uncomment for example
-add_executable(serial_example examples/serial_example.cc)
+add_executable(serial_example examples/serial_example.cpp)
 add_dependencies(serial_example ${PROJECT_NAME})
 target_link_libraries(serial_example ${PROJECT_NAME})
 
@@ -56,7 +56,7 @@ install(TARGETS ${PROJECT_NAME}
 )
 
 ## Install headers
-install(FILES include/serial/serial.h include/serial/v8stdint.h
+install(FILES include/serial/serial.hpp include/serial/v8stdint.hpp
 	DESTINATION include/serial)
 
 ## Tests

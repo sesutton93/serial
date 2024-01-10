@@ -28,7 +28,7 @@ void loop()
 // #define private public
 // #define protected public
 
-#include "serial/serial.h"
+#include "serial/serial.hpp"
 
 #if defined(__linux__)
 #include <pty.h>
