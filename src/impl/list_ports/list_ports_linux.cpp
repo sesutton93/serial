@@ -22,7 +22,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "serial/serial.h"
+#include "serial/serial.hpp"
 
 using serial::PortInfo;
 using std::istringstream;
@@ -305,7 +305,6 @@ serial::list_ports()
     search_globs.push_back("/dev/ttyUSB*");
     search_globs.push_back("/dev/tty.*");
     search_globs.push_back("/dev/cu.*");
-    search_globs.push_back("/dev/rfcomm*");
 
     vector<string> devices_found = glob( search_globs );
 

@@ -20,12 +20,15 @@ void loop()
 #include <string>
 #include "gtest/gtest.h"
 
+#define BOOST_BIND_NO_PLACEHOLDERS
+#include <boost/bind/bind.hpp>
+
 // Use FRIEND_TEST... its not as nasty, thats what friends are for
 // // OMG this is so nasty...
 // #define private public
 // #define protected public
 
-#include "serial/serial.h"
+#include "serial/serial.hpp"
 
 #if defined(__linux__)
 #include <pty.h>

@@ -4,7 +4,7 @@
 
 #include <sstream>
 
-#include "serial/impl/win.h"
+#include "serial/impl/win.hpp"
 
 using std::string;
 using std::wstring;
@@ -24,7 +24,7 @@ inline wstring
 _prefix_port_if_needed(const wstring &input)
 {
   static wstring windows_com_port_prefix = L"\\\\.\\";
-  if (input.compare(0, windows_com_port_prefix.size(), windows_com_port_prefix) != 0)
+  if (input.compare(windows_com_port_prefix) != 0)
   {
     return windows_com_port_prefix + input;
   }
