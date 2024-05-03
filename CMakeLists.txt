@@ -3,7 +3,7 @@ project(serial)
 
 # Find catkin
 find_package(ament_cmake REQUIRED)
-
+set(CMAKE_CXX_FLAGS " ${CMAKE_CXX_FLAGS_INIT} -std=c++11 -fPIC")
 
 ## Sources
 add_library(${PROJECT_NAME}
